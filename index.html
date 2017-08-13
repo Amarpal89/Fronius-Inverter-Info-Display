@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="refresh" content="10800">
+<meta name="viewport" content="width=744">
+<script src="js/jquery.min.js"></script>
+<script>
+function runPHPScript() {
+$(document).ready(function(){
+   $.ajax({
+        url:'AMsolarv3.php',
+        type:'GET', 
+        data:"parameter=some_parameter",
+       success:function(data)
+       {
+              $("#thisdiv").html(data);
+           }
+    });
+});
+}
+var myInt = setInterval(runPHPScript, 4000);
+</script>
+</head>
+<body>
+<div style="width:730px; border:1px solid #FFF;"></div>
+<div id="thisdiv"></div>
+</body>
+</html>
